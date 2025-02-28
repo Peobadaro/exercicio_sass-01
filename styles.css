@@ -1,19 +1,107 @@
-/* Error: Undefined variable.
- *    ,
- * 17 |     gap: $grid-gap;
- *    |          ^^^^^^^^^
- *    '
- *   src/styles/_mixins.scss 17:10   grid()
- *   src/styles/_products.scss 14:5  @use
- *   src/styles/main.scss 4:1        root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 17 \2502      gap: $grid-gap;\a    \2502           ^^^^^^^^^\a    \2575 \a   src/styles/_mixins.scss 17:10   grid()\a   src/styles/_products.scss 14:5  @use\a   src/styles/main.scss 4:1        root stylesheet";
+header {
+  background-color: #182C61;
+  padding: 16px 0;
 }
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .branding h1 {
+  color: #fff;
+  font-size: 24px;
+}
+header .menu {
+  display: flex;
+  gap: 24px;
+}
+header .menu li {
+  font-weight: bold;
+}
+header .menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.products-section {
+  padding: 80px 0;
+  background-color: #f5f6fa;
+}
+.products-section h2 {
+  margin-bottom: 32px;
+  color: #182C61;
+  font-size: 24px;
+  text-align: center;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.products .product-item {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.products .product-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.products .product-item h4 {
+  color: #182C61;
+  margin-bottom: 8px;
+  font-size: 19.2px;
+}
+.products .product-item p {
+  margin-bottom: 16px;
+  color: #666;
+}
+.products .product-item .product-button {
+  display: block;
+  background-color: #44bd32;
+  color: #fff;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+.products .product-item .product-button:hover {
+  background-color: rgb(53.489539749, 148.6694560669, 39.3305439331);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
